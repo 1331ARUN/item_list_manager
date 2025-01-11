@@ -8,9 +8,13 @@ function App() {
   const [input, setInput] = useState("");
 
   const handleAddItem = () => {
-    // TODO: Add logic to add input to items list
-  };
+    if(input.trim().length === 0) {
+      return;
+    }
 
+    setItems((prevItems) => [...prevItems, input])
+    setInput("")
+  };
   return (
     <>
       <h8k-navbar header="Item List Manager"></h8k-navbar>
